@@ -1,0 +1,337 @@
+@import"grid.css";
+
+*{
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+    margin: 0;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 1rem;
+    color: dimgray;
+}
+
+/* Colors */
+
+.bgr-gray{ background-color: rgb(240,240,240);}
+.bgr-purple{ background-color: purple; color: white;}
+.bgr-blue{ background-color: dodgerblue; color: white;}
+.bgr-orange{ background-color: orange; color: white;}
+
+/* Text */
+a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+a:hover{
+    color: orange;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0.67em 0;
+}
+h1{
+    font-size: 2.5em;
+    color: dodgerblue;
+}
+h2{
+    font-size: 2em;
+    text-transform: capitalize;
+    color: purple;
+}
+h3{
+    font-size: 1.4em;
+    color: dodgerblue;
+}
+.bgr-purple h2,.bgr-blue h2, .bgr-orange h2, .bgr-purple h3,.bgr-blue h3, .bgr-orange h3{
+    color: white;
+}
+h4,h5,h6{
+    text-transform: uppercase;
+    font-family: serif;
+}
+p{
+    line-height: 1.5;
+}
+.top h2{
+    font-size: 5em;
+    text-transform: capitalize;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+.center-text{
+    text-align: center;
+}
+.footer p{
+    margin: 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+
+/* Images */
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+img.gray{
+   filter: grayscale(100%); 
+    transition: 1s;
+}
+img:hover.gray{
+   filter: none; 
+}
+.img-bgr-1{
+    background-image: url(../images/creative-colors.jpeg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-bgr-2{
+    background-image: url(../images/graphic-design-1.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media(max-width:991px){
+    .img-bgr-2{
+        background-image: url(../images/graphic-design-2.jpg);
+    }
+}
+
+
+/* Layout */
+.header{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+.top{
+    height: calc(100% - 80px); 
+}
+.site-branding{
+    height: 80px;
+    width: 100%;
+}
+.site-branding img{
+    float: left;
+    height: 100%;
+    width: auto;
+    margin-right: 10px;    
+}
+.site-branding p{
+    float: left;
+    display: inline-block;
+    margin: 0;
+    line-height: 80px;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 700; 
+}
+.footer{
+    box-shadow: 0 -5px 5px rgba(0,0,0,0.5);
+}
+@media(max-width:991px){
+    .top{
+        height: calc(100% - 50px); 
+    }
+    .site-branding{ height: 50px; }
+    .site-branding p{
+        line-height: 50px;
+        
+    }   
+}
+
+/* Menu */
+.menu{
+    float: right;
+    height: 80px; 
+    margin: 0 ;
+    padding: 0;
+}
+.menu ul{
+    list-style-type: none;  
+    margin: 0 auto;
+    padding: 0;  
+    overflow: hidden;
+}
+.menu ul li{
+    float:left;
+}
+.menu a{
+    display: block;
+    line-height: 75px;
+    padding: 0 15px;  
+    color: gray;
+    font-size: 1.2em;
+    border-top: 5px solid white;
+    font-variant-caps: small-caps;
+    text-decoration: none;
+    transition: all linear 0.15s;
+}
+.menu a:hover{
+    background-color: rgb(240,240,240);
+    border-top: 5px solid orange;
+}
+.menu a.current, .menu a.current:hover{
+    border-top: 5px solid orange;
+    background-color: white;
+}
+.toggle-nav{
+    display:none;
+    color: dodgerblue;
+}
+@media(max-width:991px){
+    .menu{ height: 50px; }
+    .menu ul.active {
+        display:none;
+    }
+    .menu ul {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        background-color: white;
+        z-index: 1000;
+    }
+    .menu ul li {
+        float:none;
+        display:block;
+    }
+    .menu ul li a {
+        padding: 0;
+        line-height: 2;
+        text-align: center;
+        border: none;
+    }
+    .menu a.current, .menu a.current:hover,.menu a:hover {
+        border: none;color: dodgerblue;}
+    .toggle-nav {
+        float: right;
+        padding: 10px;
+        display: inline-block;
+        font-size: 30px;
+        transition: color linear 0.15s;  
+    }
+    .toggle-nav:hover, .toggle-nav.active {
+        text-decoration:none;
+        
+    }   
+}
+
+/* Flex */
+.flex-container-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.flex-container-order{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    overflow: hidden;  
+}
+.flex-container-order > div{
+    display: flex;
+    flex-flow: column;
+    text-align: center;  
+}
+.flex-container-order > div button{
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: auto;
+}
+.flex-item{
+    width: 23%;
+    margin: 1.5% 0;
+    background-color: white;
+    padding: 1%;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+@media(max-width: 767px){
+    .flex-item{
+        width: 100%;
+    }
+}
+@media(min-width:768px) and (max-width:991px){
+    .flex-item{
+        width: 48%;
+    }
+}
+
+/* Buttons */
+[class*="btn"]
+{
+	font-size: 1.1em;
+    padding: 0.4em 1em;
+    margin: 0.5em 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1em;
+    background-color: rgba(255,255,255,0);
+    transition: 0.2s;
+    cursor: pointer;
+}
+.btn-white{
+    border-color: white; 
+    color: white; 
+}
+.btn-white:hover{
+    background-color: white;
+   color: dimgray;
+}
+.btn-blue{
+    border-color: dodgerblue;
+    color: dodgerblue; 
+}
+.btn-blue:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+.btn-gray{
+    border-color: rgb(200,200,200);
+    color: rgb(200,200,200);
+}
+.btn-gray:hover{
+    color: rgb(100,100,100);
+    border-color: white;
+    box-shadow: 0 0 7px rgba(0,0,0,0.4);
+}
+
+/* Effects */
+.overlay{
+    position: relative;
+}
+.overlay img{
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;  
+}
+.overlay:hover img{
+    opacity: 0.3;
+}
+.overlay button{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(255,255,255,0.6);
+}
+.overlay:hover button{
+    opacity: 1;
+}
